@@ -58,7 +58,7 @@ function App() {
 
 	const [error, setError] = useState(false)
 
-	const setRandomHiragana = () => {
+	const setRandomAteso = () => {
 		const randomIndex = Math.floor(Math.random() * ateso.length)
 		setCurrent(randomIndex)
 	}
@@ -78,19 +78,19 @@ function App() {
 			localStorage.setItem('streak', streak + 1)
 			localStorage.setItem('maxStreak', streak + 1 > maxStreak ? streak + 1 : maxStreak)
 		} else {
-			const h = ateso[current].ateso
-			const r = ateso[current].english
-			setError(`Wrong! The correct answer for ${h} is ${r}`)
+			const a = ateso[current].ateso
+			const e = ateso[current].english
+			setError(`Wrong! The correct answer for ${a} is ${e}`)
 			setStreak(0)
 			localStorage.setItem('streak', 0)
 		}
 
 		setInput('')
-		setRandomHiragana()
+		setRandomAteso()
 	}
 
 	useEffect(() => {
-		setRandomHiragana()
+		setRandomAteso()
 		setStreak(parseInt(localStorage.getItem('streak')) || 0)
 		setMaxStreak(parseInt(localStorage.getItem('maxStreak')) || 0)
 	}, [])

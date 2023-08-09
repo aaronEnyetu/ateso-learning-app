@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "postcss": "^8.4.27",
+    "postcss-js": "^4.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
